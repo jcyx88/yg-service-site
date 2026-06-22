@@ -26,7 +26,7 @@ npm start
 http://localhost:3000
 ```
 
-前端咨询弹窗会请求 `POST /api/consult`。如果页面部署在 GitHub Pages 上，Pages 只能托管静态文件，不能运行 `server.js`；这种情况下咨询弹窗会自动使用前端兜底回复。要让真实后端生效，需要把这个仓库部署到支持 Node 的服务器或平台。
+本地 `localhost` 运行时，前端咨询弹窗会请求 `POST /api/consult`。如果页面部署在 GitHub Pages 上，Pages 只能托管静态文件，不能运行 `server.js`；这种情况下咨询弹窗会直接使用前端自动回复，不会请求 `/api/consult`。要让真实后端生效，需要把这个仓库部署到支持 Node 的服务器或平台。
 
 当前主推商品：
 

@@ -66,6 +66,7 @@ const FALLBACK_GAMES = [
 
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+const USE_CONSULT_BACKEND = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
 let ALL_GAMES = [];
 let ALL_GAMES_SET = new Set();
@@ -279,6 +280,10 @@ function setChatLoading(isLoading){
 }
 
 async function askBackend(message){
+  if(!USE_CONSULT_BACKEND){
+    throw new Error("consult backend disabled on static hosting");
+  }
+
   const response = await fetch("/api/consult", {
     method:"POST",
     headers:{ "Content-Type":"application/json" },
