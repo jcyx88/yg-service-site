@@ -132,6 +132,11 @@ function renderFeatured(){
     card.innerHTML = `
       <div class="game-thumb-wrap mask-profile-${idx + 1}">
         <img class="game-thumb" src="${imgSrc}" alt="${escapeHtml(name)}游戏封面图，胸部位置已薄码" loading="lazy" onerror="this.closest('.game-thumb-wrap').style.display='none'" />
+        ${idx === 0 ? `
+          <span class="thumb-mask-part part-left" aria-hidden="true"></span>
+          <span class="thumb-mask-part part-center" aria-hidden="true"></span>
+          <span class="thumb-mask-part part-right" aria-hidden="true"></span>
+        ` : ""}
         <span class="thumb-mask-label" aria-hidden="true">胸部位置已薄码</span>
       </div>
       <div class="card-body">
