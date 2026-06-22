@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>杨过游戏目录｜完整包 39 元</title>
+  <meta name="description" content="杨过游戏目录：完整包 39 元，包含 6000+ 款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后。" />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./assets/style.css?v=chat-qr-20260622" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">跳转到主要内容</a>
+
+  <header class="site-header">
+    <nav class="topbar" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="杨过游戏目录首页">
+        <span class="brand-mark">游</span>
+        <span>
+          <strong>杨过游戏目录</strong>
+          <small>游戏资料整理 · 持续更新 · 1 年售后</small>
+        </span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link" href="#games">游戏目录</a>
+        <a class="nav-link" href="#complete">完整包购买</a>
+        <button class="btn ghost js-consult" type="button" data-topic="我想咨询完整包">咨询客服</button>
+      </div>
+    </nav>
+
+    <section class="hero" id="top" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow">主推完整包 · 6000+ 款游戏 · 1 年售后</p>
+        <h1 id="heroTitle"><span>完整包 39 元，</span><span>6000+ 游戏资料</span><span>一包领取。</span></h1>
+        <p class="hero-lead"><span>包含资料整理、持续更新、快速检索和人工服务。</span><span>基础体验包 18 元，体验 30 款经典游戏，QQ群 769014453。</span><span>付款二维码统一通过咨询客服自动回复展示。</span></p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#complete">完整包QQ群1080034594</a>
+          <button class="btn outline js-consult" type="button" data-topic="完整包包含什么？微信方式不稳定怎么办？">先问客服</button>
+        </div>
+        <dl class="hero-stats" aria-label="服务亮点">
+          <div>
+            <dt>6000+</dt>
+            <dd>游戏资料</dd>
+          </div>
+          <div>
+            <dt>¥39</dt>
+            <dd>完整包</dd>
+          </div>
+          <div>
+            <dt>1年</dt>
+            <dd>售后服务</dd>
+          </div>
+        </dl>
+      </div>
+
+      <aside class="hero-product hero-payment-card" aria-label="完整包咨询信息">
+        <div class="payment-card-head">
+          <span>主推完整包</span>
+          <strong>¥39.00</strong>
+        </div>
+        <div class="hero-service-card">
+          <p>完整包包含 6000+ 款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后。</p>
+          <ul>
+            <li>付款方式请点击“咨询客服”获取自动回复</li>
+            <li>微信方式不稳定时，可查看微信备用图</li>
+            <li>完成后加入 QQ 群 1080034594 领取</li>
+          </ul>
+          <button class="btn primary js-consult" type="button" data-topic="完整包付款二维码">咨询客服获取付款方式</button>
+        </div>
+      </aside>
+    </section>
+  </header>
+
+  <main id="mainContent">
+    <section class="search-band" aria-labelledby="searchTitle">
+      <div class="section-head">
+        <p class="eyebrow">快速检索</p>
+        <h2 id="searchTitle">先查游戏，再咨询领取方式</h2>
+        <p>完整包包含 6000+ 款游戏。输入关键词或下拉选择游戏，选择后会自动复制咨询信息，方便发给客服确认。</p>
+      </div>
+
+      <div class="search-panel" role="search">
+        <div class="field">
+          <label for="gameSelect">选择游戏</label>
+          <select id="gameSelect" aria-label="选择游戏">
+            <option value="" selected>加载中...</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="keyword">搜索游戏名称</label>
+          <input id="keyword" type="search" placeholder="例如：学院 / Summer / 物语" autocomplete="off" />
+        </div>
+
+        <div class="search-actions">
+          <button class="btn secondary" id="resetBtn" type="button">重置筛选</button>
+          <button class="btn primary js-consult" type="button" data-topic="我想咨询游戏目录和完整包">咨询客服</button>
+        </div>
+      </div>
+
+      <p class="hint">当前共 <b id="totalCount">0</b> 个条目；精选展示可在 <code class="kbd">assets/app.js</code> 中调整。</p>
+    </section>
+
+    <section class="section" id="games" aria-labelledby="gamesTitle">
+      <div class="section-head">
+        <p class="eyebrow">热门展示</p>
+        <h2 id="gamesTitle">精选游戏目录</h2>
+        <p>点击卡片可复制咨询信息，也可以直接打开咨询窗口，询问版本、内容和领取方式。</p>
+      </div>
+      <div class="grid" id="gameList" aria-live="polite"></div>
+    </section>
+
+    <section class="package-band" id="complete" aria-labelledby="completeTitle">
+      <div class="package-layout">
+        <div class="package-media package-info-panel">
+          <span class="panel-kicker">咨询后付款</span>
+          <h2>付款二维码不在首页展示</h2>
+          <p>为了减少误扫和提高沟通准确度，请先通过客服弹窗确认完整包或体验包，再查看对应付款二维码。</p>
+          <button class="btn primary js-consult" type="button" data-topic="完整包付款二维码">获取完整包付款二维码</button>
+        </div>
+
+        <div class="package-copy">
+          <p class="eyebrow">完整包QQ群1080034594</p>
+          <h2 id="completeTitle">完整包 39 元（主推）</h2>
+          <p class="package-intro">39 元完整包包含 6000+ 款游戏，提供资料整理、持续更新、快速检索、人工服务和 1 年售后。购买后请加入 QQ 群 1080034594，群内人工核验后领取资料。</p>
+
+          <div class="feature-list" aria-label="完整包内容">
+            <span>6000+ 款游戏</span>
+            <span>资料整理</span>
+            <span>持续更新</span>
+            <span>快速检索</span>
+            <span>人工服务</span>
+            <span>1 年售后</span>
+          </div>
+
+          <div class="buy-card primary-buy-card" aria-label="完整包咨询信息">
+            <div>
+              <span class="label">完整包价格</span>
+              <strong class="price">¥39.00</strong>
+              <p>包含 6000+ 款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后。付款二维码请在咨询客服自动回复中查看。</p>
+            </div>
+            <div class="consult-card">
+              <strong>付款后进QQ群1080034594</strong>
+              <small>微信失败时可在咨询回复里查看备用图</small>
+              <button class="btn secondary js-consult" type="button" data-topic="完整包付款二维码">查看付款方式</button>
+            </div>
+          </div>
+
+          <div class="payment-advice" role="note">
+            <strong>操作提示：</strong>咨询客服后可查看“微信+支付宝图”，建议优先使用支付宝；如微信方式不稳定，请查看“微信备用图”。
+          </div>
+
+          <div class="mini-package" aria-label="基础体验包">
+            <div>
+              <span class="label">基础体验包</span>
+              <h3>基础体验包 ¥18.00</h3>
+              <p>包含 30 款经典游戏体验内容，一次性提取，不包含售后；完成后加入 QQ 群 769014453。</p>
+            </div>
+            <button class="btn secondary js-consult" type="button" data-topic="18元体验包付款二维码">查看体验包付款方式</button>
+          </div>
+
+          <div class="package-actions">
+            <button class="btn primary js-consult" type="button" data-topic="我想咨询完整包，微信方式不稳定怎么办？">咨询领取流程</button>
+            <button class="btn secondary" id="copyGroupBtn" type="button">复制 QQ 群 1080034594</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-section" aria-labelledby="processTitle">
+      <div class="section-head">
+        <p class="eyebrow">交易流程</p>
+        <h2 id="processTitle">游戏资料购买与领取流程</h2>
+      </div>
+      <div class="process-grid">
+        <article>
+          <span>1</span>
+          <h3>确认目录</h3>
+          <p>先浏览或搜索游戏目录，确认资料内容、版本和适配情况。</p>
+        </article>
+        <article>
+          <span>2</span>
+          <h3>购买完整包</h3>
+          <p>查看完整包 39 元说明，包含 6000+ 款游戏和 1 年售后。付款二维码通过咨询客服自动回复展示，建议优先使用支付宝。</p>
+        </article>
+        <article>
+          <span>3</span>
+          <h3>加入 QQ 群</h3>
+          <p>购买后加入 QQ 群 1080034594，人工核验后发放资料。</p>
+        </article>
+        <article>
+          <span>4</span>
+          <h3>下载与售后</h3>
+          <p>群内查看下载说明、安装教程、持续更新提醒，并享受 1 年售后服务。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>完整包 QQ 群：1080034594</strong>
+      <p>完整包 39 元包含 6000+ 款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后，QQ群 1080034594；基础体验包 18 元包含 30 款经典游戏，一次性提取，不包含售后，QQ群 769014453。</p>
+    </div>
+    <div class="footer-cta">
+      <button class="btn secondary js-consult" type="button" data-topic="完整包付款二维码">咨询付款方式</button>
+      <button class="btn secondary js-consult" type="button" data-topic="18元体验包付款二维码">体验包咨询</button>
+    </div>
+  </footer>
+
+  <div class="paybar" role="contentinfo" aria-label="固定购买和咨询栏">
+    <div class="paybar-inner">
+      <div>
+        <strong>完整包 39 元</strong>
+        <p>6000+ 款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后；购买后加入 QQ 群 1080034594。</p>
+      </div>
+      <div class="paybar-actions">
+        <button class="btn primary js-consult" type="button" data-topic="完整包付款二维码">咨询付款方式</button>
+        <button class="btn secondary js-consult" type="button" data-topic="我想咨询完整包">在线咨询</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="chat-launch-note" aria-hidden="true"></div>
+
+  <div class="chat-modal" id="chatModal" hidden>
+    <div class="chat-backdrop" data-close-chat></div>
+    <section class="chat-panel" role="dialog" aria-modal="true" aria-labelledby="chatTitle" aria-describedby="chatDesc">
+      <header class="chat-header">
+        <div>
+          <p class="eyebrow">商品咨询</p>
+          <h2 id="chatTitle">向客服咨询商品</h2>
+          <p id="chatDesc">可咨询完整包内容、基础体验包区别、完整包QQ群1080034594、基础体验包QQ群769014453、备用图等问题。</p>
+        </div>
+        <button class="icon-btn" type="button" id="closeChatBtn" aria-label="关闭咨询窗口">×</button>
+      </header>
+      <div class="quick-replies" aria-label="快捷问题">
+        <button type="button" data-question="完整包付款二维码">完整包付款二维码</button>
+        <button type="button" data-question="微信备用支付图">微信备用图</button>
+        <button type="button" data-question="18元体验包付款二维码">18元体验包</button>
+        <button type="button" data-question="完整包包含什么内容？">完整包内容</button>
+      </div>
+      <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
+      <form class="chat-form" id="chatForm">
+        <label class="sr-only" for="chatInput">输入咨询问题</label>
+        <input id="chatInput" name="message" type="text" maxlength="300" placeholder="例如：完成后多久能领取？" autocomplete="off" />
+        <button class="btn primary" type="submit">发送</button>
+      </form>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <script src="./assets/app.js?v=chat-qr-20260622" defer></script>
+</body>
+</html>

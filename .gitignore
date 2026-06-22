@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+server.log
+server.err.log
+visual-check-*.png
