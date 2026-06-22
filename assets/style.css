@@ -362,50 +362,53 @@ code.kbd{
   border-radius:10px;
 }
 .game-thumb-wrap::before{
-  left:8%;
-  right:8%;
-  top:28%;
-  bottom:8%;
+  left:22%;
+  right:22%;
+  top:48%;
+  bottom:38%;
   background:
-    linear-gradient(135deg, rgba(255,255,255,.2) 25%, transparent 25% 50%, rgba(255,255,255,.2) 50% 75%, transparent 75%),
-    rgba(15,23,42,.18);
-  background-size:14px 14px;
-  border:1px solid rgba(255,255,255,.42);
-  -webkit-backdrop-filter:blur(15px) saturate(.75);
-  backdrop-filter:blur(15px) saturate(.75);
+    linear-gradient(135deg, rgba(255,255,255,.22) 25%, transparent 25% 50%, rgba(255,255,255,.22) 50% 75%, transparent 75%),
+    rgba(15,23,42,.1);
+  background-size:10px 10px;
+  border:1px solid rgba(255,255,255,.36);
+  -webkit-backdrop-filter:blur(8px) saturate(.9);
+  backdrop-filter:blur(8px) saturate(.9);
 }
 .game-thumb-wrap::after{
-  inset:0;
-  background:linear-gradient(180deg, transparent 0%, rgba(15,23,42,.16) 100%);
+  display:none;
 }
 .mask-profile-1::before,
-.mask-profile-3::before,
 .mask-profile-6::before,
 .mask-profile-7::before{
-  top:34%;
-  bottom:10%;
+  left:20%;
+  right:20%;
+  top:49%;
+  bottom:38%;
+}
+.mask-profile-2::before{
+  left:24%;
+  right:30%;
+  top:56%;
+  bottom:30%;
+}
+.mask-profile-3::before{
+  display:none;
+}
+.mask-profile-6::before{
+  display:none;
 }
 .mask-profile-4::before,
 .mask-profile-5::before,
 .mask-profile-8::before,
 .mask-profile-9::before,
 .mask-profile-10::before{
-  left:4%;
-  right:4%;
-  top:14%;
-  bottom:6%;
+  left:8%;
+  right:8%;
+  top:46%;
+  bottom:36%;
 }
 .thumb-mask-label{
-  position:absolute;
-  left:10px;
-  bottom:10px;
-  z-index:2;
-  padding:4px 8px;
-  border-radius:999px;
-  background:rgba(255,255,255,.88);
-  color:var(--brand-strong);
-  font-size:12px;
-  font-weight:800;
+  display:none;
 }
 .card-body{
   padding:12px;

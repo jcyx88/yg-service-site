@@ -10,7 +10,7 @@ const MAX_REQUESTS = 30;
 const rateBuckets = new Map();
 const COMPLETE_GROUP = "1080034594";
 const EXPERIENCE_GROUP = "769014453";
-const COMPLETE_PACKAGE_SUMMARY = "39 元完整包包含 6000+ 款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后。";
+const COMPLETE_PACKAGE_SUMMARY = "39 元完整包包含 20000多款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后。";
 const EXPERIENCE_PACKAGE_SUMMARY = `基础体验包 18 元包含 30 款经典游戏体验内容，一次性提取，不包含售后，QQ群 ${EXPERIENCE_GROUP}。`;
 
 const contentTypes = {
@@ -96,19 +96,19 @@ function consultReply(message, selectedGame){
   const isExperienceInquiry = text.includes("基础") || text.includes("体验包") || text.includes("18") || text.includes(EXPERIENCE_GROUP);
 
   if(isExperienceInquiry){
-    return `${EXPERIENCE_PACKAGE_SUMMARY}完成后请加入 QQ 群 ${EXPERIENCE_GROUP} 领取。`;
+    return `${EXPERIENCE_PACKAGE_SUMMARY}完成后请申请 QQ 群 ${EXPERIENCE_GROUP} 领取。`;
   }
 
   if(text.includes("微信") || text.includes("失败") || text.includes("付款") || text.includes("支付") || text.includes("支付宝") || text.includes("银行卡") || text.includes("备用")){
-    return `完整包付款图会在咨询窗口中展示。主图支持微信和支付宝，建议优先使用支付宝；如微信方式不稳定，请使用微信备用支付图。完成后请加入 QQ 群 ${COMPLETE_GROUP} 领取。`;
+    return `请截图保存到相册扫码付款，第一张图支持微信和支付宝，建议优先使用支付宝/微信中的银行卡；如第一张图微信方付款失败，请使用第二张微信备用支付图。完成后请申请 QQ 群 ${COMPLETE_GROUP} 领取。`;
   }
 
   if(text.includes("群") || text.includes("领取") || text.includes("qq")){
-    return `购买完整包后请加入 QQ 群 ${COMPLETE_GROUP}，群内人工核验后提供完整资料、下载说明、安装教程和持续更新提醒，并享受 1 年售后服务。`;
+    return `购买完整包后请申请 QQ 群 ${COMPLETE_GROUP}，群内人工核验后提供完整资料、下载说明、安装教程和持续更新提醒，并享受 1 年售后服务。`;
   }
 
   if(text.includes("购买") || text.includes("位置") || text.includes("扫码") || text.includes("哪里")){
-    return `完整包价格为 39 元，付款图会在咨询窗口中展示。建议优先使用支付宝；如微信方式不稳定，请使用微信备用支付图。完成后请加入 QQ 群 ${COMPLETE_GROUP}。`;
+    return `完整包价格为 39 元。请截图保存到相册扫码付款，第一张图支持微信和支付宝，建议优先使用支付宝/微信中的银行卡；如第一张图微信方付款失败，请使用第二张微信备用支付图。完成后请申请 QQ 群 ${COMPLETE_GROUP} 领取。`;
   }
 
   if(text.includes("内容") || text.includes("包含") || text.includes("资料")){
@@ -153,7 +153,7 @@ async function handleConsult(req, res){
         secondaryPackage:`基础体验包 18 元，包含 30 款经典游戏体验内容，一次性提取，不包含售后，QQ群 ${EXPERIENCE_GROUP}`,
         completePackage:COMPLETE_PACKAGE_SUMMARY,
         experiencePackage:EXPERIENCE_PACKAGE_SUMMARY,
-        paymentAdvice:"付款图在咨询窗口中展示。主图支持微信和支付宝，建议优先使用支付宝；如微信方式不稳定，请使用微信备用支付图。"
+        paymentAdvice:"请截图保存到相册扫码付款，第一张图支持微信和支付宝，建议优先使用支付宝/微信中的银行卡；如第一张图微信方付款失败，请使用第二张微信备用支付图。完成后请申请 QQ 群 1080034594 领取。"
       }
     });
   }catch(error){

@@ -16,20 +16,20 @@ const COMPLETE_GROUP = "1080034594";
 const EXPERIENCE_GROUP = "769014453";
 const PACKAGE_NAME = "完整包";
 const PACKAGE_PRICE = "¥39.00";
-const BACKUP_PAYMENT_TEXT = "主图支持微信和支付宝，建议优先使用支付宝；如微信方式不稳定，请使用备用图。";
-const COMPLETE_PACKAGE_SUMMARY = "39 元完整包包含 6000+ 款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后。";
+const BACKUP_PAYMENT_TEXT = "请截图保存到相册扫码付款，第一张图支持微信和支付宝，建议优先使用支付宝/微信中的银行卡；如第一张图微信方付款失败，请使用第二张微信备用支付图。完成后请申请 QQ 群 1080034594 领取。";
+const COMPLETE_PACKAGE_SUMMARY = "39 元完整包包含 20000多款游戏、资料整理、持续更新、快速检索、人工服务和 1 年售后。";
 const EXPERIENCE_PACKAGE_SUMMARY = `基础体验包 18 元包含 30 款经典游戏体验内容，一次性提取，不包含售后，QQ群 ${EXPERIENCE_GROUP}。`;
 const PAYMENT_CARDS = {
   complete:[
     {
       title:"微信+支付宝图",
-      note:"完整包 39 元，推荐优先使用支付宝；付款后进 QQ 群 1080034594。",
+      note:"请截图保存到相册扫码付款。第一张图支持微信和支付宝，建议优先使用支付宝/微信中的银行卡；完成后请申请 QQ 群 1080034594 领取。",
       src:"./assets/images/complete-package-payment.jpg",
       alt:"完整包微信加支付宝付款二维码，推荐使用支付宝"
     },
     {
       title:"微信备用支付图",
-      note:"如果微信方式提示失败，再扫这张备用图。",
+      note:"如第一张图微信方付款失败，请使用第二张微信备用支付图。",
       src:"./assets/images/complete-package-backup-qr.jpg",
       alt:"微信备用支付二维码"
     }
@@ -37,7 +37,7 @@ const PAYMENT_CARDS = {
   backup:[
     {
       title:"微信备用支付图",
-      note:"如果微信方式提示失败，再扫这张备用图。",
+      note:"如第一张图微信方付款失败，请使用第二张微信备用支付图。",
       src:"./assets/images/complete-package-backup-qr.jpg",
       alt:"微信备用支付二维码"
     }
@@ -45,7 +45,7 @@ const PAYMENT_CARDS = {
   experience:[
     {
       title:"18 元体验包",
-      note:`基础体验包 18 元，付款后进 QQ 群 ${EXPERIENCE_GROUP}。`,
+      note:`基础体验包 18 元，付款后申请 QQ 群 ${EXPERIENCE_GROUP}。`,
       src:"./assets/images/experience-package-qr.png",
       alt:"18 元基础体验包付款二维码"
     }
@@ -131,8 +131,8 @@ function renderFeatured(){
     card.className = "card";
     card.innerHTML = `
       <div class="game-thumb-wrap mask-profile-${idx + 1}">
-        <img class="game-thumb" src="${imgSrc}" alt="${escapeHtml(name)}游戏封面图，敏感区域已遮挡" loading="lazy" onerror="this.closest('.game-thumb-wrap').style.display='none'" />
-        <span class="thumb-mask-label" aria-hidden="true">敏感区域已遮挡</span>
+        <img class="game-thumb" src="${imgSrc}" alt="${escapeHtml(name)}游戏封面图，胸部位置已薄码" loading="lazy" onerror="this.closest('.game-thumb-wrap').style.display='none'" />
+        <span class="thumb-mask-label" aria-hidden="true">胸部位置已薄码</span>
       </div>
       <div class="card-body">
         <span class="game-tag">${exists ? "目录内" : "可咨询"}</span>
@@ -190,19 +190,19 @@ function fallbackConsultReply(message){
   const isExperienceInquiry = text.includes("基础") || text.includes("体验包") || text.includes("18") || text.includes(EXPERIENCE_GROUP);
 
   if(isExperienceInquiry){
-    return `${EXPERIENCE_PACKAGE_SUMMARY}下面附上 18 元体验包付款图，完成后请加入 QQ 群 ${EXPERIENCE_GROUP} 领取。`;
+    return `${EXPERIENCE_PACKAGE_SUMMARY}下面附上 18 元体验包付款图，完成后请申请 QQ 群 ${EXPERIENCE_GROUP} 领取。`;
   }
 
   if(text.includes("微信") || text.includes("失败") || text.includes("付款") || text.includes("支付") || text.includes("支付宝") || text.includes("备用")){
-    return `下面附上完整包付款图。主图支持微信和支付宝，建议优先使用支付宝；如微信方式不稳定，请使用微信备用支付图。完成后请加入 QQ 群 ${COMPLETE_GROUP} 领取。`;
+    return `请截图保存到相册扫码付款，第一张图支持微信和支付宝，建议优先使用支付宝/微信中的银行卡；如第一张图微信方付款失败，请使用第二张微信备用支付图。完成后请申请 QQ 群 ${COMPLETE_GROUP} 领取。`;
   }
 
   if(text.includes("群") || text.includes("领取") || text.includes("qq")){
-    return `购买完整包后请加入 QQ 群 ${COMPLETE_GROUP}，群内人工核验后提供完整资料、下载说明、安装教程和持续更新提醒，并享受 1 年售后服务。`;
+    return `购买完整包后请申请 QQ 群 ${COMPLETE_GROUP}，群内人工核验后提供完整资料、下载说明、安装教程和持续更新提醒，并享受 1 年售后服务。`;
   }
 
   if(text.includes("购买") || text.includes("位置") || text.includes("扫码") || text.includes("哪里")){
-    return `完整包价格为 ${PACKAGE_PRICE}，下面附上付款图。建议优先使用支付宝；如微信方式不稳定，请使用微信备用支付图。完成后请加入 QQ 群 ${COMPLETE_GROUP}。`;
+    return `完整包价格为 ${PACKAGE_PRICE}。请截图保存到相册扫码付款，第一张图支持微信和支付宝，建议优先使用支付宝/微信中的银行卡；如第一张图微信方付款失败，请使用第二张微信备用支付图。完成后请申请 QQ 群 ${COMPLETE_GROUP} 领取。`;
   }
 
   if(text.includes("内容") || text.includes("包含") || text.includes("资料")){
