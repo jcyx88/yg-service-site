@@ -131,7 +131,7 @@ function renderFeatured(){
     card.className = "card";
     card.innerHTML = `
       <div class="game-thumb-wrap mask-profile-${idx + 1}">
-        <img class="game-thumb" src="${imgSrc}" alt="${escapeHtml(name)}游戏封面图，胸部位置已薄码" loading="lazy" onerror="this.closest('.game-thumb-wrap').style.display='none'" />
+        <img class="game-thumb" src="${imgSrc}" alt="${escapeHtml(name)}游戏封面图，胸部位置已薄码" loading="eager" decoding="async" onerror="this.closest('.game-thumb-wrap').style.display='none'" />
         ${idx === 0 ? `
           <span class="thumb-mask-part part-left" aria-hidden="true"></span>
           <span class="thumb-mask-part part-center" aria-hidden="true"></span>
@@ -256,7 +256,7 @@ function renderPaymentCards(cards){
     const figure = document.createElement("figure");
     figure.className = "chat-qr-card";
     figure.innerHTML = `
-      <img src="${card.src}" alt="${escapeHtml(card.alt)}" loading="lazy" />
+      <img src="${card.src}" alt="${escapeHtml(card.alt)}" loading="eager" decoding="async" />
       <figcaption>
         <strong>${escapeHtml(card.title)}</strong>
         <span>${escapeHtml(card.note)}</span>
