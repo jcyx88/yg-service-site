@@ -67,6 +67,8 @@ const FALLBACK_GAMES = [
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 const USE_CONSULT_BACKEND = ["localhost", "127.0.0.1"].includes(window.location.hostname);
+const IMAGE_PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3Crect width='16' height='10' fill='%23e5edf5'/%3E%3C/svg%3E";
+const IMAGE_VERSION = "mobile-data-20260623";
 
 let ALL_GAMES = [];
 let ALL_GAMES_SET = new Set();
@@ -126,12 +128,12 @@ function renderFeatured(){
 
   FEATURED_GAMES.forEach((name, idx) => {
     const exists = ALL_GAMES_SET.has(name);
-    const imgSrc = `assets/images/games/game${idx + 1}.jpg`;
+    const imgSrc = `assets/images/games/thumbs/game${idx + 1}.jpg?v=${IMAGE_VERSION}`;
     const card = document.createElement("article");
     card.className = "card";
     card.innerHTML = `
       <div class="game-thumb-wrap mask-profile-${idx + 1}">
-        <img class="game-thumb" src="${imgSrc}" alt="${escapeHtml(name)}游戏封面图，胸部位置已薄码" loading="eager" decoding="async" onerror="this.closest('.game-thumb-wrap').style.display='none'" />
+        <img class="game-thumb" src="${IMAGE_PLACEHOLDER}" data-src="${imgSrc}" alt="${escapeHtml(name)}游戏封面图，胸部位置已薄码" decoding="async" onerror="this.closest('.game-thumb-wrap').style.display='none'" />
         ${idx === 0 ? `
           <span class="thumb-mask-part part-left" aria-hidden="true"></span>
           <span class="thumb-mask-part part-center" aria-hidden="true"></span>
@@ -152,6 +154,8 @@ function renderFeatured(){
     list.appendChild(card);
   });
 
+  setupDeferredImages();
+
   $$("[data-copy-game]").forEach((button) => {
     button.addEventListener("click", async () => {
       const name = button.getAttribute("data-copy-game");
@@ -162,6 +166,44 @@ function renderFeatured(){
   });
 
   wireConsultButtons();
+}
+
+function loadDeferredImage(img){
+  const src = img.getAttribute("data-src");
+  if(!src) return;
+  img.src = src;
+  img.removeAttribute("data-src");
+}
+
+function setupDeferredImages(){
+  const images = $$("img[data-src]");
+  if(!images.length) return;
+
+  if("IntersectionObserver" in window){
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(!entry.isIntersecting) return;
+        loadDeferredImage(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin:"520px 0px" });
+
+    images.forEach((img) => observer.observe(img));
+    return;
+  }
+
+  const loadVisible = () => {
+    $$("img[data-src]").forEach((img) => {
+      const rect = img.getBoundingClientRect();
+      if(rect.top < window.innerHeight + 520 && rect.bottom > -220){
+        loadDeferredImage(img);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", loadVisible, { passive:true });
+  window.addEventListener("resize", loadVisible);
+  loadVisible();
 }
 
 function populateSelect(games){
