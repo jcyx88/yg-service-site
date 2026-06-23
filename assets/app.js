@@ -1,13 +1,13 @@
 const FEATURED_GAMES = [
   "亚洲之子：东方之乡",
   "极品冒险郎",
-  "特工17v25.9",
-  "美德v17",
-  "凤凰v15.2",
-  "永恒世界0.95",
+  "特工17v26.9",
+  "美德1.1",
+  "凤凰v16",
+  "永恒世界v1.1",
   "模特：爱的初篇",
   "隔壁的精美伴侣",
-  "我的幸福人生ver1.7",
+  "我的幸福人生ver1.8",
   "日不落帝国"
 ];
 
@@ -54,13 +54,13 @@ const PAYMENT_CARDS = {
 const FALLBACK_GAMES = [
   "亚洲之子：东方之乡",
   "极品冒险郎",
-  "特工17v25.9",
-  "美德v17",
-  "凤凰v15.2",
-  "永恒世界0.95",
+  "特工17v26.9",
+  "美德1.1",
+  "凤凰v16",
+  "永恒世界v1.1",
   "模特：爱的初篇",
   "隔壁的精美伴侣",
-  "我的幸福人生ver1.7",
+  "我的幸福人生ver1.8",
   "日不落帝国"
 ];
 
@@ -462,7 +462,7 @@ function wireEvents(){
 
 async function boot(){
   try{
-    const response = await fetch("./data/games.json", { cache:"force-cache" });
+    const response = await fetch("./data/games.json?v=game-names-20260624", { cache:"force-cache" });
     ALL_GAMES = await response.json();
     ALL_GAMES_SET = new Set(ALL_GAMES);
     $("#totalCount").textContent = String(ALL_GAMES.length);
